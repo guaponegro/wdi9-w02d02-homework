@@ -90,27 +90,28 @@ game = {
     battle(){
         let playerCard = this.player.hand.pop();
         let computerCard = this.computer.hand.pop();
-        console.log(`The player played ${playerCard.name} which deals ${playerCard.damage}`);
-        console.log(`The computer played ${computerCard.name} which deals ${computerCard.damage}`);
+        console.log(`${this.player.name} played ${playerCard.name} which deals ${playerCard.damage} pts`);
+        console.log(`${this.computer.name} played ${computerCard.name} which deals ${computerCard.damage} pts`);
         if(playerCard.damage > computerCard.damage){
             this.player.points ++
-            console.log("Player won this battle");
+            console.log(`${this.player.name} won this battle`);
         } else if(playerCard.damage === computerCard.damage){
             console.log("Tie Game");
         } else {
             this.computer.points ++
-            console.log("Computer Won");
+            console.log(`${this.computer.name} won this battle`);
         }
-        this.rounds();
+        this.roundsWon();
         //declare a winner based on that
     },
-    rounds(){
-        for(i = 0; i <= 2; i++){
-            
-        }
-    }
+    roundsWon(){
+            console.log(`Score: ${this.player.name}: ${this.player.points}, ${this.computer.name}: ${this.computer.points}`);
+    },
 // deal a card function
 // function to start the game which will deal a hand to player and computer
 }
-game.startGame();
+for(i = 0; i < 3; i++){
+  game.startGame();  
+}
+
 
